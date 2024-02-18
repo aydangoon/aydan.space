@@ -24,6 +24,17 @@ const config = {
         sans: ['var(--font-sans)', ...fontFamily.sans],
         mono: ['var(--font-mono)', ...fontFamily.mono],
       },
+      fontSize: {
+        sm: 'clamp(0.8rem, 0.15vw + 0.77rem, 0.89rem)',
+        md: 'clamp(1rem, 0.3vw + 0.94rem, 1.19rem)',
+        lg: 'clamp(1.25rem, 0.54vw + 1.15rem, 1.58rem)',
+        xl: 'clamp(1.56rem, 0.89vw + 1.4rem, 2.11rem)',
+        '2xl': 'clamp(1.95rem, 1.4vw + 1.69rem, 2.81rem)',
+        '3xl': 'clamp(2.44rem, 2.13vw + 2.05rem, 3.75rem)',
+        '4xl': 'clamp(3.05rem, 3.16vw + 2.47rem, 5rem)',
+        '5xl': 'clamp(3.81rem, 4.63vw + 2.96rem, 6.66rem)',
+        '6xl': 'clamp(4.77rem, 6.69vw + 3.53rem, 8.88rem)',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
