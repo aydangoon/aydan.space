@@ -1,32 +1,43 @@
+'use client'
+import { useState } from 'react'
+
 const Home = () => {
+  // COPY THIS CSS? https://neumorphic-ui.webflow.io/
+
+  const [hovered, setHovered] = useState(false)
+  console.log('hovered', hovered)
+  const unhoveredStyle = '3px 3px 4px 0 rgba(158, 164, 172, 0.25), -3px -3px 4px 0 #fff'
+  const hoveredStyle =
+    'inset 3px 3px 6px 0 rgba(0, 0, 0, 0.1), inset -6px -6px 12px 0 rgba(255, 255, 255, 1)'
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center gap-8 bg-[#f8f8fe]">
-      <div className="font-mono text-6xl">Hello World</div>
-      <div
-        className="text-primary flex flex-col items-center justify-center rounded-xl bg-[#fefef8] px-6 py-3 font-mono"
-        style={{
-          boxShadow: `4px 4px 6px 0px rgba(18, 61, 101, 0.2), -8px -8px 20px 0 rgba(255, 255, 255, 1);
-          `,
-        }}
-      >
-        <div>button</div>
-        <div
-          className="text-primary flex rounded-xl bg-[#fefef8] px-6 py-3 font-mono"
-          style={{
-            boxShadow: `4px 4px 6px 0px rgba(18, 61, 101, 0.2), -8px -8px 20px 0 rgba(255, 255, 255, 1);
-          `,
-          }}
-        >
-          button
-        </div>
+    <div className="flex h-screen w-full flex-col items-center justify-center gap-8 bg-[#f0f1f2] text-[#9ea4ac]">
+      <div style={{ writingMode: 'vertical-rl' }} className="text-black">
+        あいうえお
       </div>
       <div
-        className="text-primary flex rounded-xl px-6 py-3 font-mono"
+        className="flex rounded-xl px-6 py-3"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         style={{
-          boxShadow: `inset 3px 3px 6px 0 rgba(0, 0, 0, 0.1), inset -6px -6px 12px 0 rgba(255, 255, 255, 1);`,
+          boxShadow: hovered ? hoveredStyle : unhoveredStyle,
         }}
       >
-        <span className="drop-shadow-2xl">button</span>
+        just you
+      </div>
+      <div
+        className="text-primary font-mont flex rounded-xl px-6 py-3"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        style={{
+          boxShadow: hovered ? hoveredStyle : unhoveredStyle,
+        }}
+      >
+        button
+      </div>
+      <div className="flex flex-col space-y-4">
+        <div className="h-6 w-32  bg-purple-500" />
+        <div className="h-6 w-32  bg-cyan-500" />
+        <div className="h-6 w-32  bg-violet-500" />
       </div>
     </div>
   )
