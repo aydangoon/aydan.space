@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Favorit';
+  src: url('/fonts/favorit-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Favorit';
+  src: url('/fonts/favorit-bold.woff2') format('woff2');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'FavoritMono';
+  src: url('/fonts/favorit-mono.woff2') format('woff2');
+}
+
 @layer base {
   /* CSS Reset */
   *,
@@ -10,9 +25,12 @@
     box-sizing: border-box;
     min-width: 0;
   }
+
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --white: 255 255 255;
+
+    --background: var(--white);
+    --foreground: 28, 27, 31;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -20,7 +38,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 144 160 252;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -41,7 +59,6 @@
 
     --radius: 0.5rem;
   }
-
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -70,6 +87,11 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 

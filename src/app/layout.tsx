@@ -1,8 +1,19 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
+import './globals.css'
+import { cn } from '@/lib/utils/shadcn'
+
+// set Favorit as the global default font this also sets the font for shad cn components
+// see https://ui.shadcn.com/docs/installation/next
+const favorit_sans = localFont({
+  src: [{ path: '../../public/fonts/favorit-regular.woff2', style: 'normal' }],
+  variable: '--font-sans',
+})
+const favorit_mono = localFont({
+  src: [{ path: '../../public/fonts/favorit-mono.woff2', style: 'normal' }],
+  variable: '--font-mono',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(favorit_sans.variable, favorit_mono.variable, 'font-sans')}>
+        {children}
+      </body>
     </html>
   )
 }
