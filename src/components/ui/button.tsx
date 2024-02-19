@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils/shadcn'
 const buttonVariants = cva(
   `inline-flex items-center justify-center whitespace-nowrap rounded-2xl text-xs 
   transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring 
-  disabled:pointer-events-none disabled:opacity-50`,
+  disabled:pointer-events-none disabled:opacity-50 uppercase`,
   {
     variants: {
       variant: {
@@ -20,13 +20,13 @@ const buttonVariants = cva(
         hover:border-foreground/70`,
         ghost: '',
         link: 'text-primary underline-offset-4 hover:underline',
-        skeuo: '', // TODO
+        skeuo: 'text-slate-500',
       },
       size: {
         default: 'px-6 py-2',
         sm: 'px-4 py-1',
         lg: 'px-12 py-2',
-        icon: 'size-9',
+        icon: 'w-9 h-9 p-2',
       },
     },
     defaultVariants: {

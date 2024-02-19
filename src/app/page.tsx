@@ -1,3 +1,5 @@
+import { AlertCircle } from 'lucide-react'
+
 import { Button } from '@/components/ui/button'
 
 const Home = () => {
@@ -35,8 +37,11 @@ const Home = () => {
         <Button variant="secondary">SECONDARY</Button>
         <Button variant="outline">OUTLINE</Button>
         <Button variant="link">LINK</Button>
-        <Button variant="ghost">GHOST</Button>
+        <Button variant="ghost">ghost</Button>
         <Button variant="skeuo">SKEUOMORPHISM</Button>
+        <Button variant="skeuo" size="icon">
+          <AlertCircle />
+        </Button>
       </section>
     </div>
   )
