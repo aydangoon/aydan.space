@@ -44,6 +44,8 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button'
+
     if (variant === 'accent') {
       return (
         <motion.button
@@ -68,7 +70,22 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       )
     }
 
-    const Comp = asChild ? Slot : 'button'
+    if (variant === 'skeuo') {
+      return (
+        <motion.button
+          className={cn(buttonVariants({ variant, size, className }))}
+          ref={ref}
+          {...props}
+          whileTap={{
+            boxShadow: `inset 3px 3px 6px 0 rgba(0, 0, 0, 0.1), inset -6px -6px 12px 0 rgba(255, 255, 255, 1)`,
+          }}
+          style={{
+            boxShadow: `3px 3px 4px 0 rgba(158, 164, 172, 0.25), -3px -3px 4px 0 #fff`,
+          }}
+        />
+      )
+    }
+
     return (
       <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
     )
