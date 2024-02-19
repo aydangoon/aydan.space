@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(favorit_sans.variable, favorit_mono.variable, 'font-sans')}>
         <Navbar />
-        <div className="pt-navbar min-h-content h-[200dvh]">{children}</div>
+        <div className="pt-navbar min-h-content">{children}</div>
         <Footer />
       </body>
     </html>

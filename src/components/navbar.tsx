@@ -27,7 +27,7 @@ const Navbar: FC = () => {
   return (
     <motion.nav
       ref={ref}
-      className="h-navbar fixed w-full justify-center"
+      className="h-navbar fixed z-10 w-full justify-center"
       animate={translateYAnimation}
     >
       <div className="bg-background/90 absolute inset-0" />
