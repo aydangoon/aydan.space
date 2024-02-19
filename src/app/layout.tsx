@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 
 import './globals.css'
+import Footer from '@/components/footer'
+import Navbar from '@/components/navbar'
 import { cn } from '@/lib/utils/shadcn'
 
 // set Favorit as the global default font this also sets the font for shad cn components
@@ -28,7 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(favorit_sans.variable, favorit_mono.variable, 'font-sans')}>
-        {children}
+        <Navbar />
+        <div className="pt-navbar min-h-content h-[200dvh]">{children}</div>
+        <Footer />
       </body>
     </html>
   )

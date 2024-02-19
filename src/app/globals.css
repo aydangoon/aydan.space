@@ -37,6 +37,11 @@
     --ts-amber-400: 251 191 36;
     --ts-violet-800: 91 33 182;
 
+    /* sizes */
+    --navbar-height: 6rem;
+    --footer-height: 30rem;
+    --content-height: calc(100vh - var(--footer-height));
+
     /* theme */
     --background: var(--off-white);
     --foreground: var(--off-black);

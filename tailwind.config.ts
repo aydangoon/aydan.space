@@ -20,6 +20,11 @@ const config = {
       },
     },
     extend: {
+      spacing: {
+        navbar: 'var(--navbar-height)',
+        footer: 'var(--footer-height)',
+        content: 'var(--content-height)',
+      },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
         mono: ['var(--font-mono)', ...fontFamily.mono],
