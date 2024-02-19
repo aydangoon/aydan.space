@@ -1,0 +1,79 @@
+'use client'
+import { Slot } from '@radix-ui/react-slot'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { motion } from 'framer-motion'
+import * as React from 'react'
+
+import { cn } from '@/lib/utils/shadcn'
+
+const buttonVariants = cva(
+  `inline-flex items-center justify-center whitespace-nowrap rounded-2xl text-xs 
+  transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring 
+  disabled:pointer-events-none disabled:opacity-50`,
+  {
+    variants: {
+      variant: {
+        accent: 'shadow text-primary-foreground',
+        primary: 'shadow bg-primary text-primary-foreground hover:bg-primary/90',
+        secondary: 'shadow bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        outline: `border border-foreground shadow-sm text-foreground hover:text-foreground/70 
+        hover:border-foreground/70`,
+        ghost: '',
+        link: 'text-primary underline-offset-4 hover:underline',
+        skeuo: '', // TODO
+      },
+      size: {
+        default: 'px-6 py-2',
+        sm: 'px-4 py-1',
+        lg: 'px-12 py-2',
+        icon: 'size-9',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'default',
+    },
+  },
+)
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    if (variant === 'accent') {
+      return (
+        <motion.button
+          className={cn(buttonVariants({ variant, size, className }))}
+          animate={{
+            backgroundPosition: ['0%', '100%'],
+            transition: { duration: 4, ease: 'linear', repeat: Infinity, repeatType: 'loop' },
+          }}
+          style={{
+            backgroundSize: '400% 100%',
+            backgroundImage: `linear-gradient(
+                to right, 
+                rgb(var(--ts-emerald-400)) 0%,
+                rgb(var(--ts-emerald-400)) 25%,
+                rgb(var(--primary)) 50%,
+                rgb(var(--ts-emerald-400)) 75%,
+                rgb(var(--ts-emerald-400)) 100%
+              )`,
+          }}
+          {...props}
+        />
+      )
+    }
+
+    const Comp = asChild ? Slot : 'button'
+    return (
+      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
+    )
+  },
+)
+Button.displayName = 'Button'
+
+export { Button, buttonVariants }

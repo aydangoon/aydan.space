@@ -27,10 +27,19 @@
   }
 
   :root {
+    /* colors */
     --white: 255 255 255;
+    --off-white: 247 248 240;
+    --off-black: 28 27 31;
 
-    --background: var(--white);
-    --foreground: 28, 27, 31;
+    --ts-blue-400: 96 165 250;
+    --ts-emerald-400: 52 211 153;
+    --ts-amber-400: 251 191 36;
+    --ts-violet-800: 91 33 182;
+
+    /* theme */
+    --background: var(--off-white);
+    --foreground: var(--off-black);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -39,10 +48,10 @@
     --popover-foreground: 222.2 84% 4.9%;
 
     --primary: 144 160 252;
-    --primary-foreground: 210 40% 98%;
+    --primary-foreground: var(--off-white);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 43 41 48;
+    --secondary-foreground: var(--off-white);
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -53,7 +62,7 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
+    --border: var(--off-black);
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
