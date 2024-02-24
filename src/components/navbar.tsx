@@ -2,10 +2,10 @@
 import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState } from 'react'
 
-import { FC } from '@/lib/utils/types'
+import type { FC, Nullable } from '@/lib/utils/types'
 
 const Navbar: FC = () => {
-  const ref = useRef<HTMLElement | null>(null)
+  const ref = useRef<Nullable<HTMLElement>>(null)
   const { scrollY } = useScroll()
   const translateY = useTransform(() => {
     const height = ref.current?.offsetHeight || 0
@@ -27,10 +27,10 @@ const Navbar: FC = () => {
   return (
     <motion.nav
       ref={ref}
-      className="h-navbar fixed z-10 w-full justify-center"
+      className="fixed z-10 h-navbar w-full justify-center"
       animate={translateYAnimation}
     >
-      <div className="bg-background/90 absolute inset-0" />
+      <div className="absolute inset-0 bg-background/90" />
       <div className="relative flex items-center justify-between p-6">
         <a className="text-mono text-lg italic" href="/">
           aydan.space

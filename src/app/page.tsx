@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 
 import { FC } from '@/lib/utils/types'
 
+import GlitchedText from './glitched-text'
+
 const Home: FC = () => {
   return (
     <div className="h-[200vh]">
@@ -14,9 +16,9 @@ const Home: FC = () => {
           who am i? who am i? who am i?
         </div> */}
         <h1 className="text-center text-4xl font-bold">
-          I&apos;m Aydan,
+          I&apos;m Aydan, a
           <br />
-          Web Developer
+          <GlitchedText />
           <br /> based in Brooklyn
         </h1>
       </section>
