@@ -4,26 +4,15 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 import { FC } from '@/lib/utils/types'
 
+import Background from './background'
 import GlitchedText from './glitched-text'
 
 const Home: FC = () => {
   return (
     <div>
-      <div className="fixed inset-0 z-0 opacity-50">
-        <img className="absolute left-[8%] top-[12%] h-[15%] rotate-6" src="/imgs/sunflowers.gif" />
-        <img
-          className="absolute bottom-[20%] right-[18%] h-[15%] rotate-6"
-          src="/imgs/violets.gif"
-        />
-        <img className="absolute right-[16%] top-[12%] h-[15%] -rotate-6" src="/imgs/buds.gif" />
-        <img className="absolute bottom-[30%] left-[16%] h-[15%] -rotate-6" src="/imgs/buds2.gif" />
-        <img className="absolute bottom-[30%] left-[50%] h-[8%]" src="/imgs/spinning-cd.gif" />
-        <img className="absolute right-[30%] top-[20%] h-[8%]" src="/imgs/spinning-cd2.gif" />
-        <img className="absolute left-[30%] top-[20%] h-[8%]" src="/imgs/fish-jumping.gif" />
-        <img className="absolute left-[50%] top-[25%] h-[8%]" src="/imgs/fish-jumping2.gif" />
-      </div>
+      <Background />
       <main className="relative z-10 mx-auto w-full px-2 sm:px-8 xl:w-[1280px]">
-        <section className="h-[max(70dvh,40rem)] w-full">
+        <section className="relative h-[max(70dvh,40rem)] w-full">
           <h1 className="text-center text-3xl font-bold sm:text-4xl">
             I&apos;m Aydan, a
             <br />
@@ -31,7 +20,7 @@ const Home: FC = () => {
             <br /> based in Brooklyn
           </h1>
         </section>
-        <div className="flex w-full flex-col space-y-64">
+        {/* <div className="flex w-full flex-col space-y-64">
           <section className="relative flex w-full flex-wrap justify-center pl-8 sm:flex-nowrap">
             <aside
               style={{ transformOrigin: 'top left', transform: 'rotate(-90deg) translateX(-100%)' }}
@@ -118,7 +107,7 @@ const Home: FC = () => {
               </div>
             </div>
           </section>
-        </div>
+        </div> */}
       </main>
     </div>
   )
