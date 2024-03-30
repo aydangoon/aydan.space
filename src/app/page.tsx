@@ -10,9 +10,9 @@ import GlitchedText from './glitched-text'
 const Home: FC = () => {
   return (
     <div>
-      <main className="relative z-10 mx-auto w-full px-2 sm:px-8 xl:w-[1280px]">
-        <section className="relative h-[max(70dvh,40rem)] w-full">
-          <Background />
+      <Background />
+      <main className="relative z-10 mx-auto mb-64 w-full px-2 sm:px-8 xl:w-[1280px]">
+        <section className="relative h-[max(90dvh,40rem)] w-full pt-8">
           <h1 className="text-center text-3xl font-bold sm:text-4xl">
             I&apos;m Aydan, a
             <br />

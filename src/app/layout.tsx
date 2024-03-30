@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Gluten } from 'next/font/google'
 import localFont from 'next/font/local'
 
 import './globals.css'
@@ -8,13 +9,18 @@ import { cn } from '@/lib/utils/shadcn'
 
 // set Favorit as the global default font this also sets the font for shad cn components
 // see https://ui.shadcn.com/docs/installation/next
-const favorit_sans = localFont({
-  src: [{ path: '../../public/fonts/favorit-regular.woff2', style: 'normal' }],
+// const favorit_sans = localFont({
+//   src: [{ path: '../../public/fonts/favorit-regular.woff2', style: 'normal' }],
+//   variable: '--font-sans',
+// })
+// const favorit_mono = localFont({
+//   src: [{ path: '../../public/fonts/favorit-mono.woff2', style: 'normal' }],
+//   variable: '--font-mono',
+// })
+
+const gluten = Gluten({
+  subsets: ['latin'],
   variable: '--font-sans',
-})
-const favorit_mono = localFont({
-  src: [{ path: '../../public/fonts/favorit-mono.woff2', style: 'normal' }],
-  variable: '--font-mono',
 })
 
 export const metadata: Metadata = {
@@ -29,9 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(favorit_sans.variable, favorit_mono.variable, 'font-sans')}>
+      <body className={cn(gluten.variable, 'dark font-sans')}>
         <Navbar />
-        <div className="pt-navbar min-h-content">{children}</div>
+        <div className="min-h-content pt-navbar">{children}</div>
         <Footer />
       </body>
     </html>

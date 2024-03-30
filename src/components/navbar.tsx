@@ -9,8 +9,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu'
 
@@ -41,7 +39,7 @@ const Navbar: FC = () => {
       animate={translateYAnimation}
     >
       <div className="absolute inset-0 bg-background/90" />
-      <div className="relative flex items-center justify-between p-6">
+      <div className="absolute inset-0 flex items-center justify-between p-6">
         <a className="text-mono text-lg italic" href="/">
           aydan.space
         </a>
