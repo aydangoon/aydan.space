@@ -1,6 +1,10 @@
+import { useWindowSize } from '@uidotdev/usehooks'
+
 import { FC } from '@/lib/utils/types'
 
 const Background: FC = () => {
+  const { width, height } = useWindowSize()
+  console.log(width, height)
   return (
     <div
       style={{
@@ -13,31 +17,48 @@ const Background: FC = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        opacity: 0.5,
       }}
     >
       <div
         style={{
-          width: 'max(1000px, 100%)',
+          width: '1200px',
           height: '100%',
           position: 'absolute',
           left: '50%',
           top: '50%',
           transform: 'translate(-50%, -50%)',
+          border: '4px solid red',
         }}
       >
-        <img className="absolute left-[8%] top-[12%] h-[15%] rotate-6" src="/imgs/sunflowers.gif" />
-        <img
-          className="absolute bottom-[20%] right-[18%] h-[15%] rotate-6"
-          src="/imgs/violets.gif"
-        />
-        <img className="absolute right-[16%] top-[12%] h-[15%] -rotate-6" src="/imgs/buds.gif" />
-        <img className="absolute bottom-[30%] left-[16%] h-[15%] -rotate-6" src="/imgs/buds2.gif" />
-        <img className="absolute bottom-[30%] left-[50%] h-[8%]" src="/imgs/spinning-cd.gif" />
-        <img className="absolute right-[30%] top-[20%] h-[8%]" src="/imgs/spinning-cd2.gif" />
-        <img className="absolute left-[30%] top-[20%] h-[8%]" src="/imgs/fish-jumping.gif" />
-        <img className="absolute left-[50%] top-[25%] h-[8%]" src="/imgs/fish-jumping2.gif" />
+        {/* waves */}
+        <BgImg src="/imgs/bg/waves.webp" cx={0.5} cy={0.5} scale={0.1} />
       </div>
     </div>
+  )
+}
+
+type BgImgProps = {
+  cx: number
+  cy: number
+  src: string
+  scale?: number
+}
+
+const BgImg: FC<BgImgProps> = (props) => {
+  const { cx, cy, scale } = props
+  return (
+    <img
+      alt=""
+      src={props.src}
+      style={{
+        position: 'absolute',
+        top: `${100 * cy}%`,
+        left: `${100 * cx}%`,
+        transform: `translate(-50%, -50%) scale(${scale ?? 1})`,
+        border: '4px solid blue',
+      }}
+    />
   )
 }
 

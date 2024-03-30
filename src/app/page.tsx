@@ -10,9 +10,9 @@ import GlitchedText from './glitched-text'
 const Home: FC = () => {
   return (
     <div>
-      <Background />
       <main className="relative z-10 mx-auto w-full px-2 sm:px-8 xl:w-[1280px]">
         <section className="relative h-[max(70dvh,40rem)] w-full">
+          <Background />
           <h1 className="text-center text-3xl font-bold sm:text-4xl">
             I&apos;m Aydan, a
             <br />
@@ -20,7 +20,7 @@ const Home: FC = () => {
             <br /> based in Brooklyn
           </h1>
         </section>
-        {/* <div className="flex w-full flex-col space-y-64">
+        <div className="flex w-full flex-col space-y-64">
           <section className="relative flex w-full flex-wrap justify-center pl-8 sm:flex-nowrap">
             <aside
               style={{ transformOrigin: 'top left', transform: 'rotate(-90deg) translateX(-100%)' }}
@@ -107,7 +107,7 @@ const Home: FC = () => {
               </div>
             </div>
           </section>
-        </div> */}
+        </div>
       </main>
     </div>
   )
